@@ -1,0 +1,25 @@
+name: Validação de Projeto e Docker
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  testar-e-buildar:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Baixa o código do seu repositório no servidor do GitHub
+      - name: Baixar o código
+        uses: actions/checkout@v4
+
+      # 2. Testa localmente o script do Node.js para ver se não tem erro de sintaxe
+      - name: Validar script Node.js
+        run: node -c server.js
+
+      # 3. Executa o build do Dockerfile para garantir que a imagem compila com sucesso
+      - name: Validar Build do Dockerfile
+        run: |
+          docker build -t meu-app-hello-world:latest .
+          echo "Docker build concluído com sucesso!"
