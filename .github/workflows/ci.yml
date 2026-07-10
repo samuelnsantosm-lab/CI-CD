@@ -1,6 +1,7 @@
 name: Validação de Projeto e Docker
 
 on:
+  workflow_dispatch:
   push:
     branches: [ "main"  ]
   pull_request:
