@@ -8,6 +8,7 @@ Este é um projeto prático projetado para aprender e validar os fundamentos de 
 *   **Docker**: Criação e isolamento do ambiente da aplicação em um container.
 *   **GitHub Actions**: Automatização de testes de sintaxe e validação do build do Docker.
 
+
 ---
 
 ## 📁 Estrutura do Projeto
